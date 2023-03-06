@@ -20,36 +20,36 @@ type IntSet struct {
 	words []uint64
 }
 
-func main() {
-	a := IntSet{}
-	a.Add(1)
-	a.Add(144)
-	a.Add(9)
-	fmt.Println(a.String()) // "{1 9 144}"
-	a.Remove(1)
-	fmt.Println(a.String()) // "{9 144}"
-	b := a.Copy()
-	fmt.Println(b.String()) // "{9 144}"
-	a.Clear()
-	fmt.Println(a.String()) // "{}"
-	b.Clear()
+// func main() {
+// 	a := IntSet{}
+// 	a.Add(1)
+// 	a.Add(144)
+// 	a.Add(9)
+// 	fmt.Println(a.String()) // "{1 9 144}"
+// 	a.Remove(1)
+// 	fmt.Println(a.String()) // "{9 144}"
+// 	b := a.Copy()
+// 	fmt.Println(b.String()) // "{9 144}"
+// 	a.Clear()
+// 	fmt.Println(a.String()) // "{}"
+// 	b.Clear()
 
-	a.addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-	b.addAll(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
-	fmt.Println(a.String()) // "{1 2 3 4 5 6 7 8 9 10}"
-	fmt.Println(b.String()) // "{5 6 7 8 9 10 11 12 13 14 15}"
-	a.DifferenceWith(b)
-	fmt.Println(a.String()) // "{1 2 3 4}"
-	a.Clear()
-	a.addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-	a.intersectWith(b)
-	fmt.Println(a.String()) // "{5 6 7 8 9 10}"
-	a.Clear()
-	a.addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-	a.SymmetricDifference(b)
-	fmt.Println(a.String()) // "{1 2 3 4 11 12 13 14 15}"
-	fmt.Println(a.Elems())
-}
+// 	a.addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+// 	b.addAll(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+// 	fmt.Println(a.String()) // "{1 2 3 4 5 6 7 8 9 10}"
+// 	fmt.Println(b.String()) // "{5 6 7 8 9 10 11 12 13 14 15}"
+// 	a.DifferenceWith(b)
+// 	fmt.Println(a.String()) // "{1 2 3 4}"
+// 	a.Clear()
+// 	a.addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+// 	a.intersectWith(b)
+// 	fmt.Println(a.String()) // "{5 6 7 8 9 10}"
+// 	a.Clear()
+// 	a.addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+// 	a.SymmetricDifference(b)
+// 	fmt.Println(a.String()) // "{1 2 3 4 11 12 13 14 15}"
+// 	fmt.Println(a.Elems())
+// }
 func (s *IntSet) Elems() []int64 {
 	var elems []int64
 
